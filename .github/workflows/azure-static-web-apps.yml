@@ -18,9 +18,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: '14.x' # 确保这里的 Node.js 版本与你的项目兼容
+          node-version: '18.x' # 确保这里的 Node.js 版本与你的项目兼容
 
       - name: Install dependencies
         run: npm install

@@ -4,7 +4,7 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: () => import('../components/Home.vue'), // 首頁組件
+		component: () => import('../components/HomePage.vue'), // 首頁組件
 	},
 	{
 		path: '/rules',
@@ -24,7 +24,7 @@ const routes = [
 	{
 		path: '/facilities',
 		name: 'Facilities',
-		component: () => import('../components/Facilities.vue'), // 公共設施使用（琴房使用）組件
+		component: () => import('../components/CommunityFacilities.vue'), // 公共設施使用（琴房使用）組件
 	},
 ];
 

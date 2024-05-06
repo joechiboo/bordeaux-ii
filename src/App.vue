@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	import Home from './components/Home.vue';
+	import Home from './components/HomePage.vue';
 
 	export default {
 		name: 'App',
@@ -23,4 +23,4 @@
 		margin-top: 60px;
 	}
 </style>
-./components/Home.vue
+./components/Home.vue./components/HomePage.vue
