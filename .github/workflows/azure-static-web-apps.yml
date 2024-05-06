@@ -15,12 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3 # 确保使用最新版本的 checkout action
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3 # 确保使用最新版本的 setup-node action
         with:
-          node-version: '18.x' # 确保这里的 Node.js 版本与你的项目兼容
+          node-version: '20.x' # 更新到 Node.js 20
 
       - name: Install dependencies
         run: npm install
