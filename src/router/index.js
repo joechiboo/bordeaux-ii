@@ -4,7 +4,13 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: () => import('../components/HomePage.vue'), // 首頁組件
+		component: () => import('../components/WelcomeBanner.vue'), // 首頁組件
+		meta: { title: '首頁' },
+	},
+	{
+		path: '/welcome',
+		name: 'Welcome',
+		component: () => import('../components/WelcomeBanner.vue'), // 首頁組件
 		meta: { title: '首頁' },
 	},
 	{
