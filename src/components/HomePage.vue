@@ -1,16 +1,27 @@
 <template>
+	<Navbar />
 	<div class="background-image" :style="backgroundStyle">
 		<!-- 你可以在这个 div 内部放置其他内容 -->
+		<WelcomeBanner />
+		<QuickLinks />
 	</div>
 </template>
 
 <script>
+	import Navbar from './Navbar.vue';
+	import WelcomeBanner from './WelcomeBanner.vue';
+	import QuickLinks from './QuickLinks.vue';
 	export default {
 		data() {
 			return {
 				backgroundImage: '', // 存儲背景圖片的 URL
 				backgroundStyle: {}, // 用于存储背景样式
 			};
+		},
+		components: {
+			Navbar,
+			WelcomeBanner,
+			QuickLinks,
 		},
 		mounted() {
 			this.updateBackgroundImage();
@@ -39,8 +50,9 @@
 
 <style scoped>
 	.background-image {
-		height: 90vh;
-		width: 100%;
+		height: 94vh; /* 视窗的100%高度 */
+		width: 100vw; /* 视窗的100%宽度 */
+		margin: 0; /* 移除默认边距 */
 	}
 
 	.container {
