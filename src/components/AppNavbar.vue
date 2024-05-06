@@ -40,9 +40,6 @@
 </script>
 
 <style scoped>
-	.navbar {
-	}
-
 	@media (max-width: 768px) {
 		nav ul {
 			flex-direction: column;

@@ -1,16 +1,13 @@
 <template>
 	<Navbar />
 	<div class="background-image" :style="backgroundStyle">
-		<!-- 你可以在这个 div 内部放置其他内容 -->
-		<WelcomeBanner />
-		<QuickLinks />
+		<!-- 动态内容区域 -->
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-	import Navbar from './Navbar.vue';
-	import WelcomeBanner from './WelcomeBanner.vue';
-	import QuickLinks from './QuickLinks.vue';
+	import Navbar from './AppNavbar.vue';
 	export default {
 		data() {
 			return {
@@ -20,8 +17,6 @@
 		},
 		components: {
 			Navbar,
-			WelcomeBanner,
-			QuickLinks,
 		},
 		mounted() {
 			this.updateBackgroundImage();
@@ -53,6 +48,7 @@
 		height: 94vh; /* 视窗的100%高度 */
 		width: 100vw; /* 视窗的100%宽度 */
 		margin: 0; /* 移除默认边距 */
+		position: relative;
 	}
 
 	.container {
@@ -66,3 +62,4 @@
 		}
 	}
 </style>
+./AppNavbar.vue
