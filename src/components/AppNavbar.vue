@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<router-link class="navbar-brand" to="/">波爾多II</router-link>
+			<router-link class="navbar-brand" to="/welcome">波爾多II</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -35,7 +35,7 @@
 
 <script>
 	export default {
-		name: 'Navbar',
+		name: 'AppNavbar',
 	};
 </script>
 

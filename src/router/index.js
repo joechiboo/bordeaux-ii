@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
 	{
-		path: '/welcome',
+		path: '/',
 		name: 'Home',
 		component: () => import('../components/HomePage.vue'), // 首頁組件
 		meta: { title: '首頁' },
