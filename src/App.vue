@@ -23,4 +23,3 @@
 		margin-top: 60px;
 	}
 </style>
-./components/Home.vue./components/HomePage.vue
