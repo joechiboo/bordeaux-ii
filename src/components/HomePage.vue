@@ -1,9 +1,10 @@
 <template>
 	<AppNavbar />
-	<div class="background-image" :style="backgroundStyle">
-		<!-- 动态内容区域 -->
+	<!-- 动态内容区域 -->
+	<div class="content-wrapper">
 		<router-view></router-view>
 	</div>
+	<div class="background-image" :style="backgroundStyle"></div>
 </template>
 
 <script>
@@ -42,27 +43,17 @@
 		height: 94vh; /* 视窗的100%高度 */
 		width: 100vw; /* 视窗的100%宽度 */
 		position: relative;
-		overflow: hidden; /* 确保伪元素不会溢出容器 */
+		opacity: 0.3;
 	}
 
-	.background-image::before {
-		content: '';
+	.content-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: inherit; /* 确保可以继承背景图 */
-		background-size: cover;
-		background-position: center;
-		opacity: 0.3; /* 设置透明度 */
-		z-index: -1; /* 确保伪元素在内容之下 */
-	}
-
-	/* 确保主内容在伪元素之上 */
-	.background-image > * {
-		position: relative;
-		z-index: 1;
+		padding: 20px; /* 可以根据需要添加内边距 */
+		z-index: -1;
 	}
 
 	.container {

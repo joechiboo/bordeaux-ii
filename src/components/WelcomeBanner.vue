@@ -15,6 +15,7 @@
 	.welcome-banner {
 		text-align: center;
 		margin-top: 50px; /* 调整顶部间距 */
+		opacity: 1 !important;
 	}
 
 	.welcome-banner h1 {
