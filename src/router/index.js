@@ -46,7 +46,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
 	if (to.meta.title) {
-		document.title = '波爾多二期 - 模範社區' + ' | ' + to.meta.title;
+		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
 	next();
 });

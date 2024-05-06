@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<router-link class="navbar-brand" to="/welcome">波爾多II</router-link>
+			<router-link class="navbar-brand" to="/welcome">波爾多 - 樂菲莊園</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"
