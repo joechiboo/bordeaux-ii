@@ -14,7 +14,7 @@
 
 <script>
 	export default {
-		name: 'Community Events',
+		name: 'CommunityEvents',
 		data() {
 			return {
 				events: [
