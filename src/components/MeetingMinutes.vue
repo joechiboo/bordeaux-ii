@@ -28,7 +28,7 @@
 					<div v-if="record.issues && record.issues.length">
 						<strong>討論議題：</strong>
 						<ul>
-							<li v-for="issue in record.issues">{{ issue }}</li>
+							<li v-for="(issue, issueIndex) in record.issues" :key="`issue-${issueIndex}`">{{ issue }}</li>
 						</ul>
 					</div>
 				</div>
