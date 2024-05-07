@@ -20,7 +20,7 @@ const routes = [
 		meta: { title: '社區規章' },
 	},
 	{
-		path: '/committee',
+		path: '/members',
 		name: 'CommitteeMembers',
 		component: () => import('../components/CommitteeMembers.vue'), // 管委會成員名單組件
 		meta: { title: '委員名單' },
