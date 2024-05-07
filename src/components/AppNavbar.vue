@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<router-link class="navbar-brand" to="/welcome" @click.native="collapseNavbar">波爾多 - 樂菲莊園 {{ subtitle }}</router-link>
+			<router-link class="navbar-brand" to="/welcome" @click="collapseNavbar">波爾多 - 樂菲莊園 {{ subtitle }}</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -16,19 +16,19 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<router-link class="nav-link" to="/members" @click.native="collapseNavbar">委員名單</router-link>
+						<router-link class="nav-link" to="/members" @click="collapseNavbar">委員名單</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/rules" @click.native="collapseNavbar">社區規章</router-link>
+						<router-link class="nav-link" to="/rules" @click="collapseNavbar">社區規章</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/events" @click.native="collapseNavbar">大事記</router-link>
+						<router-link class="nav-link" to="/events" @click="collapseNavbar">大事記</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/records" @click.native="collapseNavbar">會議記錄</router-link>
+						<router-link class="nav-link" to="/records" @click="collapseNavbar">會議記錄</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/facilities" @click.native="collapseNavbar" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
+						<router-link class="nav-link" to="/facilities" @click="collapseNavbar" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
 					</li>
 				</ul>
 			</div>
