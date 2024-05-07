@@ -16,10 +16,13 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
+						<router-link class="nav-link" to="/members">委員名單</router-link>
+					</li>
+					<li class="nav-item">
 						<router-link class="nav-link" to="/rules">社區規章</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/members">委員名單</router-link>
+						<router-link class="nav-link" to="/events">大事記</router-link>
 					</li>
 					<li class="nav-item">
 						<router-link class="nav-link" to="/records">會議記錄</router-link>
@@ -44,5 +47,9 @@
 		nav ul {
 			flex-direction: column;
 		}
+	}
+
+	.nav-bar {
+		z-index: 2;
 	}
 </style>

@@ -26,7 +26,7 @@ const routes = [
 		meta: { title: '委員名單' },
 	},
 	{
-		path: '/minutes',
+		path: '/records',
 		name: 'MeetingMinutes',
 		component: () => import('../components/MeetingMinutes.vue'), // 會議記錄組件
 		meta: { title: '會議記錄' },
@@ -36,6 +36,12 @@ const routes = [
 		name: 'Facilities',
 		component: () => import('../components/CommunityFacilities.vue'), // 公共設施使用（琴房使用）組件
 		meta: { title: '公共設施' },
+	},
+	{
+		path: '/events',
+		name: 'Events',
+		component: () => import('../components/CommunityEvents.vue'), // 大事記
+		meta: { title: '大事記' },
 	},
 ];
 

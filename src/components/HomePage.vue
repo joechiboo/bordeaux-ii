@@ -53,7 +53,11 @@
 		right: 0;
 		bottom: 0;
 		padding: 20px; /* 可以根据需要添加内边距 */
-		z-index: -1;
+		z-index: 1;
+	}
+
+	.navbar {
+		z-index: 2;
 	}
 
 	.container {
