@@ -17,9 +17,20 @@
 
 			<div :id="'collapse' + index" class="collapse" :class="{ show: index === 0 }" aria-labelledby="headingOne" data-parent="#accordion">
 				<div class="card-body">
-					<strong>時間：</strong>{{ record.datetime }}<br />
+					<strong>日期與時間：</strong>{{ record.datetime }}<br />
 					<strong>地點：</strong>{{ record.location }}<br />
-					<strong>討論內容：</strong><br />{{ record.content }}
+					<strong>召集人：</strong>{{ record.convener }}<br />
+					<strong>會議內容摘要：</strong><br />{{ record.content }}
+					<div v-if="record.nextMeeting">
+						<strong>下次會議日期：</strong>{{ record.nextMeeting.date }}<br />
+						<strong>特別說明：</strong>{{ record.nextMeeting.specialNote }}
+					</div>
+					<div v-if="record.issues && record.issues.length">
+						<strong>討論議題：</strong>
+						<ul>
+							<li v-for="issue in record.issues">{{ issue }}</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -35,9 +46,27 @@
 						title: '第一屆第一次管委會會議',
 						location: '新店區民族路耕莘護專',
 						datetime: '2024年5月4日(六) 11:30-13:35',
-						content: '委員商討公設點交，財報交接事宜。討論下次會議議題包括地下室停車場修繕、垃圾區髒亂異味果蠅等。',
+						convener: '黃O欽',
+						content: '委員們商討了公設點交及財報交接事宜。',
+						nextMeeting: {
+							date: '2024年5月18日，星期六，10:00 - 12:00',
+							specialNote: '下次會議將提供Google Meet遠端連線選項，以配合無法現場參加的委員。',
+						},
+						issues: [
+							'地下室停車場修繕',
+							'垃圾區髒亂異味果蠅問題',
+							'泳池漏水',
+							'大廳漏水',
+							'陽台統一規格加窗防風防颱',
+							'物業管理服務人員品質提升',
+							'每戶大門隔音問題',
+							'一樓大廳門面規範',
+							'機車位重規劃',
+							'地下停車場燈光使用省電LED燈泡（政府補助方案）',
+							'公共電費過高需監控',
+						],
 					},
-					// 更多會議記錄...
+					// 可以增加更多會議記錄
 				],
 			};
 		},
