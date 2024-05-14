@@ -43,7 +43,7 @@
 		height: 94vh; /* 视窗的100%高度 */
 		width: 100vw; /* 视窗的100%宽度 */
 		position: relative;
-		opacity: 0.3;
+		opacity: 0.1;
 	}
 
 	.content-wrapper {
