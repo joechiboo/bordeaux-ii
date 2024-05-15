@@ -5,8 +5,8 @@
 				<h5 class="mb-0">
 					<button
 						class="btn-lg"
-						data-toggle="collapse"
-						:data-target="'#collapse' + index"
+						data-bs-toggle="collapse"
+						:data-bs-target="'#collapse' + index"
 						:aria-expanded="index === 0 ? 'true' : 'false'"
 						:aria-controls="'collapse' + index"
 					>
@@ -15,12 +15,15 @@
 				</h5>
 			</div>
 
-			<div :id="'collapse' + index" class="collapse" :class="{ show: index === 0 }" aria-labelledby="headingOne" data-parent="#accordion">
+			<div :id="'collapse' + index" class="collapse" :class="{ show: index === 0 }" aria-labelledby="headingOne" data-bs-parent="#accordion">
 				<div class="card-body">
 					<strong>日期與時間：</strong>{{ record.datetime }}<br />
 					<strong>地點：</strong>{{ record.location }}<br />
 					<strong>召集人：</strong>{{ record.convener }}<br />
-					<strong>會議內容摘要：</strong><br />{{ record.content }}
+					<div v-if="record.content">
+						<strong>會議內容摘要：</strong><br />
+						{{ record.content }}
+					</div>
 					<div v-if="record.nextMeeting">
 						<strong>下次會議日期：</strong>{{ record.nextMeeting.date }}<br />
 						<strong>特別說明：</strong>{{ record.nextMeeting.specialNote }}
@@ -42,6 +45,13 @@
 		data() {
 			return {
 				records: [
+					{
+						title: '第一屆管理委員會第一次例會開會通知',
+						location: 'EF棟一樓大廳閱覽室',
+						datetime: '2024/5/18 09:00-11:00',
+						convener: '樂菲莊園管理委員會',
+						issues: ['1. 法律顧問聘請', '2. 會計師聘請', '3. 功能委員選任'],
+					},
 					{
 						title: '第一屆第一次管委會會議',
 						location: '新店區民族路耕莘護專',
