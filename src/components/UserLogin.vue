@@ -22,7 +22,7 @@
 			handleLogin() {
 				if (this.password === '樂菲莊園') {
 					this.$store.commit('login');
-					this.$router.push({ name: 'Welcome' });
+					this.$router.push({ name: 'MeetingMinutes' });
 				} else {
 					alert('密碼錯誤');
 				}
