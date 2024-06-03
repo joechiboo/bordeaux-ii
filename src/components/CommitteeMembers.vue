@@ -116,6 +116,5 @@
 	.table th {
 		vertical-align: middle; /* 新增：使表格內容垂直居中 */
 		height: 50px; /* 新增：統一表格行高 */
-		width: 33%;
 	}
 </style>
