@@ -26,7 +26,7 @@
 					</div>
 					<div v-if="record.nextMeeting">
 						<strong>下次會議日期：</strong>{{ record.nextMeeting.date }}<br />
-						<strong>特別說明：</strong>{{ record.nextMeeting.specialNote }}
+						<strong v-if="record.nextMeeting.specialNote">特別說明：</strong>{{ record.nextMeeting.specialNote }}
 					</div>
 					<div v-if="record.issues && record.issues.length">
 						<strong>討論議題：</strong>
@@ -45,6 +45,21 @@
 		data() {
 			return {
 				records: [
+					{
+						title: '第一屆管理委員會五月份例會會議記錄',
+						location: '家教室',
+						datetime: '2024/5/18 09:00-11:45',
+						convener: '樂菲莊園管理委員會',
+						issues: [
+							'1. 聘顧法律顧問人事案：決議通過聘僱法律顧問',
+							'2. 聘僱會計師顧問人事案：決議通過聘僱會計師顧問',
+							'3. 權責委員選任：總務委員 丁夏蘭, 設施委員 石若薇, 機電委員 陳樹棟, 安全委員 王源新, 園藝委員 章湘湘, 調解委員 宋廣翊, 環保委員 范中興, 聯誼委員 周彥妘, 資管委員 詹鈞傑',
+							'臨時動議1. 環保回收室開放時間：決議通過每週一到週四晚上6時至隔日早上8時, 每週五晚上6時至周一早上8時',
+						],
+						nextMeeting: {
+							date: '2024/5/25 09:00',
+						},
+					},
 					{
 						title: '第一屆管理委員會第一次例會開會通知',
 						location: 'EF棟一樓大廳閱覽室',
