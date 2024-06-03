@@ -36,7 +36,7 @@ const routes = [
 		path: '/records',
 		name: 'MeetingMinutes',
 		component: () => import('../components/MeetingMinutes.vue'), // 會議記錄組件
-		meta: { title: '會議記錄' },
+		meta: { title: '會議記錄', requiresAuth: true },
 	},
 	{
 		path: '/facilities',
@@ -61,12 +61,8 @@ router.beforeEach((to, from, next) => {
 	if (to.meta.title) {
 		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
-	if (to.name !== 'Login' && !store.state.isAuthenticated) {
-		if (from.name !== 'Login') {
-			next({ name: 'Login' });
-		} else {
-			next(false);
-		}
+	if (to.meta.requiresAuth && !store.state.isAuthenticated) {
+		next({ name: 'Login' });
 	} else {
 		next();
 	}
