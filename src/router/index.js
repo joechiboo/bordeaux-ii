@@ -1,6 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import store from '../store'; // 引入 Vuex store
 
 const routes = [
+	{
+		path: '/login',
+		name: 'Login',
+		component: () => import('../components/Login.vue'),
+		meta: { title: '登入' },
+	},
 	{
 		path: '/',
 		name: 'Home',
@@ -54,7 +61,15 @@ router.beforeEach((to, from, next) => {
 	if (to.meta.title) {
 		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
-	next();
+	if (to.name !== 'Login' && !store.state.isAuthenticated) {
+		if (from.name !== 'Login') {
+			next({ name: 'Login' });
+		} else {
+			next(false);
+		}
+	} else {
+		next();
+	}
 });
 
 export default router;
