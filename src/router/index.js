@@ -5,7 +5,7 @@ const routes = [
 	{
 		path: '/login',
 		name: 'Login',
-		component: () => import('../components/Login.vue'),
+		component: () => import('../components/UserLogin.vue'),
 		meta: { title: '登入' },
 	},
 	{
