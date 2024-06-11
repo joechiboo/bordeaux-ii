@@ -45,7 +45,7 @@
 		name: 'CommitteeMembers',
 		data() {
 			return {
-				totalMeetings: 3, // 設定總會議次數 // 目前到六月第一次會議
+				totalMeetings: 4, // 設定總會議次數 // 目前到六月第一次會議
 				committees: [
 					{
 						version: '第一屆管理委員會',
@@ -62,23 +62,23 @@
 							{
 								title: '當選委員名單',
 								details: [
-									{ key: 'A 棟(A3-15F)', value: '王O新', attendance: [true, false, true] },
-									{ key: 'A 棟(A3-12F)', value: '陳O中', attendance: [false, false, false] },
-									{ key: 'B 棟(B3-09F)', value: '黃O欽', attendance: [true, true, true] },
-									{ key: 'B 棟(B1-05F)', value: '宋O翊', attendance: [true, true, true] },
-									{ key: 'C 棟(C3-06F)', value: '袁O燕', attendance: [true, true, true] },
-									{ key: 'C 棟(C6-02F)', value: '蔡O安', attendance: [false, false, false] },
-									{ key: 'D 棟(D2-08F)', value: '劉O誼', attendance: [true, true, true] },
-									{ key: 'D 棟(D1-03F)', value: '范O興', attendance: [false, true, true] },
-									{ key: 'E 棟(E1-02F)', value: '石O薇', attendance: [true, true, true] },
-									{ key: 'E 棟(E8-08F)', value: '章O湘', attendance: [false, true, true] },
-									{ key: 'F 棟(F3-10F)', value: '丁O蘭', attendance: [true, true, false] },
-									{ key: 'F 棟(F6-06F)', value: '周O妘', attendance: [true, false, true] },
-									{ key: 'G 棟(G6-04F)', value: '李O民', attendance: [true, true, true] },
-									{ key: 'G 棟(G5-11F)', value: '陳O棟', attendance: [true, true, true] },
-									{ key: 'H 棟(H1-04F)', value: '夏O斌', attendance: [false, false, true] },
-									{ key: 'H 棟(H8-06F)', value: '詹O傑', attendance: [true, true, true] },
-									{ key: '店面(S12-01F)', value: '陳O妤', attendance: [true, false, true] },
+									{ key: 'A 棟(A3-15F)', value: '王O新', attendance: [true, false, true, true] },
+									{ key: 'A 棟(A3-12F)', value: '陳O中', attendance: [false, false, false, false] },
+									{ key: 'B 棟(B3-09F)', value: '黃O欽', attendance: [true, true, true, true] },
+									{ key: 'B 棟(B1-05F)', value: '宋O翊', attendance: [true, true, true, true] },
+									{ key: 'C 棟(C3-06F)', value: '袁O燕', attendance: [true, true, true, true] },
+									{ key: 'C 棟(C6-02F)', value: '蔡O安', attendance: [false, false, false, false] },
+									{ key: 'D 棟(D2-08F)', value: '劉O誼', attendance: [true, true, true, true] },
+									{ key: 'D 棟(D1-03F)', value: '范O興', attendance: [false, true, true, true] },
+									{ key: 'E 棟(E1-02F)', value: '石O薇', attendance: [true, true, true, true] },
+									{ key: 'E 棟(E8-08F)', value: '章O湘', attendance: [false, true, true, true] },
+									{ key: 'F 棟(F3-10F)', value: '丁O蘭', attendance: [true, true, false, true] },
+									{ key: 'F 棟(F6-06F)', value: '周O妘', attendance: [true, false, true, true] },
+									{ key: 'G 棟(G6-04F)', value: '李O民', attendance: [true, true, true, true] },
+									{ key: 'G 棟(G5-11F)', value: '陳O棟', attendance: [true, true, true, true] },
+									{ key: 'H 棟(H1-04F)', value: '夏O斌', attendance: [false, false, true, false] },
+									{ key: 'H 棟(H8-06F)', value: '詹O傑', attendance: [true, true, true, true] },
+									{ key: '店面(S12-01F)', value: '陳O妤', attendance: [true, false, true, false] },
 								],
 							},
 							// 添加其他信息區塊
