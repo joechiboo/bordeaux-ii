@@ -45,7 +45,7 @@
 		name: 'CommitteeMembers',
 		data() {
 			return {
-				totalMeetings: 5, // 設定總會議次數 // 目前到8/24
+				totalMeetings: 13, // 設定總會議次數 // 目前到11/25
 				committees: [
 					{
 						version: '第一屆管理委員會',
