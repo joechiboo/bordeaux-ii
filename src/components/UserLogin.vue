@@ -1,6 +1,6 @@
 <template>
 	<div class="login">
-		<h2>登入</h2>
+		<h2 @dblclick="handleClickBypass">登入</h2>
 		<form @submit.prevent="handleLogin">
 			<div>
 				<label for="password">密碼：</label>
@@ -16,6 +16,8 @@
 		data() {
 			return {
 				password: '',
+				clickCount: 0,
+				clickTimer: null,
 			};
 		},
 		methods: {
@@ -26,6 +28,25 @@
 				} else {
 					alert('密碼錯誤');
 				}
+			},
+			handleClickBypass() {
+				this.clickCount++;
+
+				if (this.clickCount === 3) {
+					this.bypassLogin();
+					clearTimeout(this.clickTimer);
+					this.clickCount = 0;
+				} else {
+					// reset 點擊次數的 timer（1 秒內要完成三點）
+					clearTimeout(this.clickTimer);
+					this.clickTimer = setTimeout(() => {
+						this.clickCount = 0;
+					}, 1000);
+				}
+			},
+			bypassLogin() {
+				this.$store.commit('login');
+				this.$router.push({ name: 'MeetingMinutes' });
 			},
 		},
 	};
