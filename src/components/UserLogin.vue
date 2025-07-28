@@ -37,11 +37,11 @@
 					clearTimeout(this.clickTimer);
 					this.clickCount = 0;
 				} else {
-					// reset 點擊次數的 timer（1 秒內要完成三點）
+					// reset 點擊次數的 timer（2 秒內要完成三點）
 					clearTimeout(this.clickTimer);
 					this.clickTimer = setTimeout(() => {
 						this.clickCount = 0;
-					}, 1000);
+					}, 2000);
 				}
 			},
 			bypassLogin() {
