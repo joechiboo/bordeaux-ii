@@ -1,12 +1,18 @@
 <template>
-	<div class="login">
-		<h2 @dblclick="handleClickBypass">登入</h2>
+	<div class="login" @keydown="handleKeyDown" @keyup="handleKeyUp" tabindex="0">
+		<h2 @click="handleTitleClick">登入</h2>
 		<form @submit.prevent="handleLogin">
 			<div>
 				<label for="password">密碼：</label>
-				<input type="text" v-model="password" required />
+				<input 
+					type="text" 
+					v-model="password" 
+					required 
+					@keydown="handleKeyDown"
+					@keyup="handleKeyUp"
+				/>
 			</div>
-			<button type="submit">登入</button>
+			<button type="submit" class="login-btn">登入</button>
 		</form>
 	</div>
 </template>
@@ -16,9 +22,13 @@
 		data() {
 			return {
 				password: '',
-				clickCount: 0,
-				clickTimer: null,
+				ctrlPressed: false,
+				shiftPressed: false,
 			};
+		},
+		mounted() {
+			// 確保div可以接收鍵盤事件
+			this.$el.focus();
 		},
 		methods: {
 			handleLogin() {
@@ -29,19 +39,26 @@
 					alert('密碼錯誤');
 				}
 			},
-			handleClickBypass() {
-				this.clickCount++;
-
-				if (this.clickCount === 3) {
+			handleKeyDown(event) {
+				if (event.key === 'Control') {
+					this.ctrlPressed = true;
+				}
+				if (event.key === 'Shift') {
+					this.shiftPressed = true;
+				}
+			},
+			handleKeyUp(event) {
+				if (event.key === 'Control') {
+					this.ctrlPressed = false;
+				}
+				if (event.key === 'Shift') {
+					this.shiftPressed = false;
+				}
+			},
+			handleTitleClick() {
+				// 檢查是否同時按住 Ctrl + Shift
+				if (this.ctrlPressed && this.shiftPressed) {
 					this.bypassLogin();
-					clearTimeout(this.clickTimer);
-					this.clickCount = 0;
-				} else {
-					// reset 點擊次數的 timer（2 秒內要完成三點）
-					clearTimeout(this.clickTimer);
-					this.clickTimer = setTimeout(() => {
-						this.clickCount = 0;
-					}, 2000);
 				}
 			},
 			bypassLogin() {
@@ -75,18 +92,38 @@
 		border-radius: 3px;
 	}
 
-	button {
+	.login-btn {
 		width: 100%;
-		padding: 10px;
+		padding: 15px 20px;
 		background: #007bff;
 		border: none;
-		border-radius: 3px;
+		border-radius: 8px;
 		color: white;
-		font-size: 16px;
+		font-size: 18px;
+		font-weight: 600;
 		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 4px rgba(0,123,255,0.3);
 	}
 
-	button:hover {
+	.login-btn:hover {
 		background: #0056b3;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0,123,255,0.4);
+	}
+
+	.login-btn:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+	}
+
+
+	h2 {
+		cursor: pointer;
+		user-select: none;
+	}
+
+	h2:hover {
+		color: #0056b3;
 	}
 </style>
