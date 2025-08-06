@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkbordeaux_ii"]=self["webpackChunkbordeaux_ii"]||[]).push([[908],{6908:function(i,n,u){u.r(n),u.d(n,{default:function(){return o}});var e=u(6768);function r(i,n,u,r,t,a){return(0,e.uX)(),(0,e.CE)("div",null,"Community Facilities")}var t={name:"CommunityFacilities"},a=u(1241);const c=(0,a.A)(t,[["render",r]]);var o=c}}]);
-//# sourceMappingURL=908.caa1b638.js.map
