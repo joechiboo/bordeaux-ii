@@ -27,7 +27,8 @@
 				//const hour = new Date().getHours();
 				//if (hour >= 4 && hour <= 19) {
 				const second = new Date().getSeconds();
-				this.backgroundImage = second % 2 == 0 ? '/images/day.jpg' : '/images/night.jpg';
+				const basePath = process.env.NODE_ENV === 'production' ? '/bordeaux-ii' : '';
+				this.backgroundImage = second % 2 == 0 ? `${basePath}/images/day.jpg` : `${basePath}/images/night.jpg`;
 				this.backgroundStyle = {
 					'background-image': `url(${this.backgroundImage})`,
 					'background-size': 'cover',
