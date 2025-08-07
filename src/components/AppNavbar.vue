@@ -43,7 +43,7 @@
 		data() {
 			return {
 				subtitle: '',
-				isFacilitiesDisabled: true, // 根据实际情况设置
+				isFacilitiesDisabled: false, // 根据实际情况设置
 			};
 		},
 		created() {

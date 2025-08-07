@@ -11,7 +11,9 @@
       "Bash(git worktree:*)",
       "Bash(git commit:*)",
       "Bash(find:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git push:*)",
+      "Bash(gh run list:*)"
     ],
     "deny": []
   }
