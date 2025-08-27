@@ -9,7 +9,7 @@
 export const committeeData = [
 	{
 		version: '第二屆管理委員會',
-		totalMeetings: 13,
+		totalMeetings: 14,
 		// 會議列表 - 對應attendance陣列索引
 		meetingList: [
 			'第1次例行會議',
@@ -25,6 +25,7 @@ export const committeeData = [
 			'7/22會議',
 			'8/6例會',
 			'8/7例會',
+			'8/14例會',
 		],
 		contents: [
 			{
@@ -39,23 +40,27 @@ export const committeeData = [
 			{
 				title: '當選委員名單',
 				details: [
-					{ key: 'A 棟(A3-15F)', value: '簡O燕', attendance: [true, false, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'A 棟(A5-12F)', value: '許O書', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'B 棟(B1-04F)', value: '郭O銘', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'B 棟(B3-09F)', value: '宋O翊', attendance: [false, true, true, true, true, true, false, false, false, false, false, true, true] },
-					{ key: 'C 棟(C2-08F)', value: '張O榮', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'C 棟(C5-05F)', value: '鄧O芳', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'D 棟(D3-09F)', value: '楊O華', attendance: [true, true, true, true, true, true, true, true, true, true, false, true, true] },
-					{ key: 'D 棟(D5-05F)', value: '褚O聲', attendance: [true, true, true, true, true, true, false, true, true, true, true, true, true] },
-					{ key: 'E 棟(E6-12F)', value: '游O順(辭)', attendance: [true, true, true, true, true, false, true, false, false, true, false, false, false] },
-					{ key: 'E 棟(E6-09F)', value: '楊O峰', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'F 棟(F6-04F)', value: '林O君', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'F 棟(F5-04F)', value: '陳O宏(辭)', attendance: [true, true, true, true, true, true, false, false, false, true, false, false, false] },
-					{ key: 'G 棟(G6-04F)', value: '李O傑', attendance: [true, false, true, true, false, false, true, false, false, false, false, false, false] },
-					{ key: 'G 棟(G2-07F)', value: '李O鳳', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'H 棟(H5-07F)', value: '呂O真', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true] },
-					{ key: 'H 棟(H6-05F)', value: '張O麗', attendance: [true, true, true, true, true, true, true, true, true, true, false, false, false] },
-					{ key: '店面(S1-01F)', value: '彭O思', attendance: [true, false, false, false, false, false, false, false, false, false, false, false, false] },
+					{ key: 'A 棟(A3-15F)', value: '簡O燕', attendance: [true, false, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'A 棟(A5-12F)', value: '許O書', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'B 棟(B1-04F)', value: '郭O銘', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'B 棟(B3-09F)', value: '宋O翊', attendance: [false, true, true, true, true, true, false, false, false, false, false, true, true, false] },
+					{ key: 'C 棟(C2-08F)', value: '張O榮', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'C 棟(C5-05F)', value: '鄧O芳', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'D 棟(D3-09F)', value: '楊O華', attendance: [true, true, true, true, true, true, true, true, true, true, false, true, true, true] },
+					{ key: 'D 棟(D5-05F)', value: '褚O聲', attendance: [true, true, true, true, true, true, false, true, true, true, true, true, true, true] },
+					{ key: 'E 棟(E6-12F)', value: '游O順(辭)', attendance: [true, true, true, true, true, false, true, false, false, true, false, false, false, true] },
+					{ key: 'E 棟(E6-09F)', value: '楊O峰', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'F 棟(F6-04F)', value: '林O君', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'F 棟(F5-04F)', value: '陳O宏(辭)', attendance: [true, true, true, true, true, true, false, false, false, true, false, false, false, true] },
+					{ key: 'G 棟(G6-04F)', value: '李O傑', attendance: [true, false, true, true, false, false, true, false, false, false, false, false, false, true] },
+					{ key: 'G 棟(G2-07F)', value: '李O鳳', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'H 棟(H5-07F)', value: '呂O真', attendance: [true, true, true, true, true, true, true, true, true, true, true, true, true, true] },
+					{ key: 'H 棟(H6-05F)', value: '張O麗', attendance: [true, true, true, true, true, true, true, true, true, true, false, false, false, false] },
+					{
+						key: '店面(S1-01F)',
+						value: '彭O思',
+						attendance: [true, false, false, false, false, false, false, false, false, false, false, false, false, false],
+					},
 				],
 			},
 		],
