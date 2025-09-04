@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<router-link class="navbar-brand" to="/welcome" @click="collapseNavbar">波爾多 - 樂菲莊園 {{ subtitle }}</router-link>
+			<router-link class="navbar-brand" to="/welcome" @click="collapseNavbar">波爾多 - 樂菲莊園</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -90,9 +90,44 @@
 </script>
 
 <style scoped>
+	/* 選中的導航項目樣式 */
+	.nav-link.router-link-active {
+		background-color: rgba(255, 255, 255, 0.1) !important;
+		border-radius: 6px;
+		font-weight: 600;
+		border-bottom: 3px solid #007bff;
+		padding-bottom: 5px !important;
+		color: #ffffff !important;
+		position: relative;
+	}
+
+	/* hover 效果 */
+	.nav-link:hover {
+		background-color: rgba(255, 255, 255, 0.05);
+		border-radius: 6px;
+		transition: all 0.3s ease;
+	}
+
+	/* 為選中項目添加小圓點 */
+	.nav-link.router-link-active::before {
+		content: '●';
+		color: #007bff;
+		margin-right: 6px;
+		font-size: 8px;
+		vertical-align: middle;
+	}
+
 	@media (max-width: 768px) {
 		nav ul {
 			flex-direction: column;
+		}
+		
+		/* 手機版選中樣式調整 */
+		.nav-link.router-link-active {
+			border-bottom: none;
+			border-left: 4px solid #007bff;
+			border-radius: 0 6px 6px 0;
+			padding-left: 12px !important;
 		}
 	}
 

@@ -26,7 +26,8 @@ cp -r dist/* ../gh-pages-build/
 
 進入 gh-pages-build 目錄，提交更新：
 
-```bashcd ../gh-pages-build
+```bash
+cd ../gh-pages-build
 git add .
 git commit -m "Deploy updated site"
 git push origin gh-pages

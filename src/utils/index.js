@@ -1,18 +1,35 @@
 export const attendanceUtils = {
 	calculateAttendanceRate(attendance, totalMeetings) {
-		if (!attendance || !Array.isArray(attendance) || totalMeetings === 0) {
+		if (!attendance || totalMeetings === 0) {
 			return 0;
 		}
-		const attended = attendance.filter(a => a === true).length;
+		// 支援字串和陣列兩種格式
+		let attended;
+		if (typeof attendance === 'string') {
+			attended = (attendance.match(/1/g) || []).length;
+		} else if (Array.isArray(attendance)) {
+			attended = attendance.filter(a => a === true || a === 1).length;
+		} else {
+			return 0;
+		}
 		return Math.round((attended / totalMeetings) * 100);
 	},
 
 	getAttendanceStats(attendance) {
-		if (!attendance || !Array.isArray(attendance)) {
+		if (!attendance) {
 			return { attended: 0, total: 0, rate: 0 };
 		}
-		const attended = attendance.filter(a => a === true).length;
-		const total = attendance.length;
+		// 支援字串和陣列兩種格式
+		let attended, total;
+		if (typeof attendance === 'string') {
+			attended = (attendance.match(/1/g) || []).length;
+			total = attendance.length;
+		} else if (Array.isArray(attendance)) {
+			attended = attendance.filter(a => a === true || a === 1).length;
+			total = attendance.length;
+		} else {
+			return { attended: 0, total: 0, rate: 0 };
+		}
 		const rate = total > 0 ? Math.round((attended / total) * 100) : 0;
 		return { attended, total, rate };
 	},
