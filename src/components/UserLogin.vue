@@ -37,23 +37,24 @@
 					
 					// 檢查是否有返回頁面參數
 					const returnTo = this.$route.query.returnTo;
-					console.log('登入成功，檢查返回URL:', returnTo);
+					const fromVoting = this.$route.query.from === 'voting';
 					
-					if (returnTo && returnTo !== '/login' && returnTo !== '/') {
-						// 確保不會回到登入頁面造成循環
+					console.log('登入成功，檢查返回URL:', returnTo);
+					console.log('是否從投票來:', fromVoting);
+					console.log('完整 query 參數:', this.$route.query);
+					
+					if (returnTo && returnTo !== '/login') {
+						// 如果有 returnTo 且不是登入頁面，就返回該頁面
 						console.log('登入成功，返回到:', returnTo);
 						this.$router.replace(returnTo);
+					} else if (fromVoting) {
+						// 如果是從投票頁面來的但沒有正確的 returnTo，回到投票列表
+						console.log('從投票頁面登入，返回投票列表');
+						this.$router.replace('/voting');
 					} else {
-						// 如果是從投票頁面來的，但沒有正確的 returnTo，就回首頁
-						const fromVoting = this.$route.query.from === 'voting';
-						if (fromVoting) {
-							console.log('從投票頁面登入，返回首頁');
-							this.$router.replace('/');
-						} else {
-							// 預設跳轉到會議記錄
-							console.log('登入成功，跳轉到會議記錄');
-							this.$router.replace({ name: 'MeetingMinutes' });
-						}
+						// 預設跳轉到會議記錄
+						console.log('登入成功，跳轉到會議記錄');
+						this.$router.replace({ name: 'MeetingMinutes' });
 					}
 				} else {
 					alert('密碼錯誤');

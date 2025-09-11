@@ -329,11 +329,14 @@ export default {
         
         if (!userId || !store.state.isAuthenticated) {
           alert('請先登入後再投票');
-          console.log('跳轉到登入頁面，返回URL:', route.fullPath);
+          const returnUrl = route.fullPath;
+          console.log('跳轉到登入頁面，返回URL:', returnUrl);
+          console.log('完整路由資訊:', route);
+          
           router.push({ 
             path: '/login', 
             query: { 
-              returnTo: route.fullPath,
+              returnTo: returnUrl,
               from: 'voting'
             } 
           });
