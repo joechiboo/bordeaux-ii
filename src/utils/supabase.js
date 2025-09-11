@@ -1,11 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// 支援 Vite 和 Vue CLI 兩種環境
+const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || process.env.VUE_APP_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY || process.env.VUE_APP_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.error('Missing Supabase environment variables!');
-  console.error('Please check your .env.local file');
+  console.error('Please set VUE_APP_SUPABASE_URL and VUE_APP_SUPABASE_ANON_KEY');
+  throw new Error('Supabase configuration is missing');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
@@ -147,7 +149,7 @@ export const votingApi = {
       .eq('topic_id', topicId);
 
     if (totalError) {
-      console.error('Error fetching total votes:', error);
+      console.error('Error fetching total votes:', totalError);
       throw totalError;
     }
 
