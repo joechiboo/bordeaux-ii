@@ -34,7 +34,27 @@
 			handleLogin() {
 				if (this.password === '樂菲莊園') {
 					this.$store.commit('login');
-					this.$router.push({ name: 'MeetingMinutes' });
+					
+					// 檢查是否有返回頁面參數
+					const returnTo = this.$route.query.returnTo;
+					console.log('登入成功，檢查返回URL:', returnTo);
+					
+					if (returnTo && returnTo !== '/login' && returnTo !== '/') {
+						// 確保不會回到登入頁面造成循環
+						console.log('登入成功，返回到:', returnTo);
+						this.$router.replace(returnTo);
+					} else {
+						// 如果是從投票頁面來的，但沒有正確的 returnTo，就回首頁
+						const fromVoting = this.$route.query.from === 'voting';
+						if (fromVoting) {
+							console.log('從投票頁面登入，返回首頁');
+							this.$router.replace('/');
+						} else {
+							// 預設跳轉到會議記錄
+							console.log('登入成功，跳轉到會議記錄');
+							this.$router.replace({ name: 'MeetingMinutes' });
+						}
+					}
 				} else {
 					alert('密碼錯誤');
 				}
