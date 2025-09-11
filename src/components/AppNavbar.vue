@@ -30,6 +30,9 @@
 					<li class="nav-item">
 						<router-link class="nav-link" to="/facilities" @click="collapseNavbar" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
 					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/voting" @click="collapseNavbar">🗳 電子投票</router-link>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -81,8 +84,16 @@
 					case '/facilities':
 						this.subtitle = '公共設施';
 						break;
+					case '/voting':
+						this.subtitle = '電子投票';
+						break;
 					default:
-						this.subtitle = ''; // 當路徑不匹配時無副標題
+						// 處理動態路由
+						if (path.startsWith('/voting/')) {
+							this.subtitle = '投票詳情';
+						} else {
+							this.subtitle = ''; // 當路徑不匹配時無副標題
+						}
 				}
 			},
 		},
