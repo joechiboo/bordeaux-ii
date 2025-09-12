@@ -74,7 +74,14 @@ router.beforeEach((to, from, next) => {
 		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
 	if (to.meta.requiresAuth && !store.state.isAuthenticated) {
-		next({ name: 'Login' });
+		// 將原本要前往的頁面作為 returnTo 參數傳遞
+		next({ 
+			name: 'Login',
+			query: { 
+				returnTo: to.fullPath,
+				from: from.name === 'VotingList' || from.name === 'VotingDetail' ? 'voting' : undefined
+			}
+		});
 	} else {
 		next();
 	}
