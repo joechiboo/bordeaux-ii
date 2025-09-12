@@ -70,19 +70,28 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+	console.log('🛡️ 路由守衛檢查:');
+	console.log('  - 前往:', to.fullPath);
+	console.log('  - 來自:', from.fullPath);
+	console.log('  - 需要認證:', to.meta.requiresAuth);
+	console.log('  - 已登入:', store.state.isAuthenticated);
+	
 	if (to.meta.title) {
 		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
 	if (to.meta.requiresAuth && !store.state.isAuthenticated) {
-		// 將原本要前往的頁面作為 returnTo 參數傳遞
-		next({ 
+		console.log('🚫 需要登入，重定向到登入頁面');
+		const redirectParams = { 
 			name: 'Login',
 			query: { 
 				returnTo: to.fullPath,
 				from: from.name === 'VotingList' || from.name === 'VotingDetail' ? 'voting' : undefined
 			}
-		});
+		};
+		console.log('  - 重定向參數:', redirectParams);
+		next(redirectParams);
 	} else {
+		console.log('✅ 路由守衛通過');
 		next();
 	}
 });

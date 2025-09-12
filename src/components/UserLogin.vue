@@ -33,25 +33,29 @@
 		methods: {
 			handleLogin() {
 				if (this.password === '樂菲莊園') {
+					console.log('🔐 密碼驗證成功，開始登入流程');
 					this.$store.commit('login');
+					console.log('✅ Vuex 登入狀態已更新');
 					
 					// 檢查是否有返回頁面參數
 					const returnTo = this.$route.query.returnTo;
 					const fromVoting = this.$route.query.from === 'voting';
 					
-					console.log('登入成功，檢查返回URL:', returnTo);
-					console.log('是否從投票來:', fromVoting);
-					console.log('完整 query 參數:', this.$route.query);
+					console.log('📍 當前路由資訊:');
+					console.log('  - 完整路徑:', this.$route.fullPath);
+					console.log('  - query 參數:', this.$route.query);
+					console.log('  - returnTo:', returnTo);
+					console.log('  - fromVoting:', fromVoting);
 					
 					// 優先處理 returnTo 參數
 					if (returnTo && returnTo !== '/login') {
-						console.log('登入成功，返回到:', returnTo);
+						console.log('🎯 有 returnTo 參數，返回到:', returnTo);
 						this.$router.replace(returnTo);
 					} else if (fromVoting) {
-						console.log('從投票頁面登入，返回投票列表');
+						console.log('🗳️ 從投票頁面來的，返回投票列表');
 						this.$router.replace('/voting');
 					} else {
-						console.log('登入成功，跳轉到會議記錄');
+						console.log('📄 預設跳轉到會議記錄');
 						this.$router.replace({ name: 'MeetingMinutes' });
 					}
 				} else {
@@ -81,8 +85,29 @@
 				}
 			},
 			bypassLogin() {
+				console.log('🚀 快速登入模式');
 				this.$store.commit('login');
-				this.$router.push({ name: 'MeetingMinutes' });
+				
+				// 檢查是否有返回頁面參數
+				const returnTo = this.$route.query.returnTo;
+				const fromVoting = this.$route.query.from === 'voting';
+				
+				console.log('📍 快速登入 - 當前路由資訊:');
+				console.log('  - 完整路徑:', this.$route.fullPath);
+				console.log('  - returnTo:', returnTo);
+				console.log('  - fromVoting:', fromVoting);
+				
+				// 優先處理 returnTo 參數
+				if (returnTo && returnTo !== '/login') {
+					console.log('🎯 快速登入 - 返回到:', returnTo);
+					this.$router.push(returnTo);
+				} else if (fromVoting) {
+					console.log('🗳️ 快速登入 - 返回投票列表');
+					this.$router.push('/voting');
+				} else {
+					console.log('📄 快速登入 - 跳轉到會議記錄');
+					this.$router.push({ name: 'MeetingMinutes' });
+				}
 			},
 		},
 	};
