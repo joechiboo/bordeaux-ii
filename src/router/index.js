@@ -54,13 +54,13 @@ const routes = [
 		path: '/voting',
 		name: 'VotingList',
 		component: () => import('../components/VotingList.vue'), // 投票列表
-		meta: { title: '電子投票' },
+		meta: { title: '電子投票', requiresAuth: true },
 	},
 	{
 		path: '/voting/:id',
 		name: 'VotingDetail',
 		component: () => import('../components/VotingDetail.vue'), // 投票詳情
-		meta: { title: '投票詳情' },
+		meta: { title: '投票詳情', requiresAuth: true },
 	},
 ];
 
