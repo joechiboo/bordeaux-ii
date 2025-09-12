@@ -107,57 +107,11 @@
       <div v-if="hasVoted || voting.status === 'ended'" class="voting-results">
         <h2 class="section-title">📊 投票結果</h2>
         
-        <div class="results-summary">
-          <div class="summary-item">
-            <span class="summary-label">總投票數</span>
-            <span class="summary-value">{{ statistics.totalVotes }}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">參與率</span>
-            <span class="summary-value">{{ statistics.participationRate }}%</span>
-          </div>
-        </div>
-
-        <div class="results-chart">
-          <div 
-            v-for="result in sortedResults" 
-            :key="result.option_id"
-            class="result-item"
-          >
-            <div class="result-header">
-              <span class="result-option">{{ result.voting_options?.option_text }}</span>
-              <span class="result-stats">
-                {{ result.vote_count }} 票 ({{ result.percentage }}%)
-              </span>
-            </div>
-            <div class="result-bar">
-              <div 
-                class="result-fill"
-                :style="{ 
-                  width: result.percentage + '%',
-                  background: getBarColor(result.percentage)
-                }"
-              ></div>
-            </div>
-            <div v-if="userVote?.option_id === result.option_id" class="your-choice">
-              ✓ 您的選擇
-            </div>
-          </div>
-        </div>
-
-        <div v-if="statistics.floorDistribution" class="floor-distribution">
-          <h3>🏢 樓層投票分布</h3>
-          <div class="floor-grid">
-            <div 
-              v-for="(count, floor) in statistics.floorDistribution" 
-              :key="floor"
-              class="floor-item"
-            >
-              <span class="floor-label">{{ floor }}F</span>
-              <span class="floor-count">{{ count }}</span>
-            </div>
-          </div>
-        </div>
+        <!-- 使用進階圖表組件 -->
+        <VotingChart 
+          :results="results"
+          :statistics="statistics"
+        />
       </div>
 
       <div class="voting-notice">
@@ -198,9 +152,13 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { votingApi, supabase } from '../utils/supabase';
 import { useStore } from 'vuex';
+import VotingChart from './VotingChart.vue';
 
 export default {
   name: 'VotingDetail',
+  components: {
+    VotingChart
+  },
   setup() {
     const route = useRoute();
     const router = useRouter();
