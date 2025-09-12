@@ -259,8 +259,10 @@ export default {
           participated: processedTopics.filter(v => v.hasVoted).length
         };
 
-        if (stats.value.ongoing > 0 && !showNotification.value) {
-          notificationMessage.value = `您有 ${stats.value.ongoing} 個進行中的投票，請記得參與！`;
+        // 只對未參與的進行中投票顯示通知
+        const unvotedOngoing = processedTopics.filter(v => v.status === 'ongoing' && !v.hasVoted).length;
+        if (unvotedOngoing > 0 && !showNotification.value) {
+          notificationMessage.value = `您有 ${unvotedOngoing} 個進行中的投票，請記得參與！`;
           showNotification.value = true;
         }
       } catch (error) {
