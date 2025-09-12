@@ -220,17 +220,13 @@ export default {
           .select(`
             *,
             voting_records (
-              user_id,
-              residents!inner (
-                active
-              )
+              user_id
             ),
             voting_results (
               vote_count
             )
           `)
           .eq('is_active', true)
-          .eq('voting_records.residents.active', 1)
           .order('created_at', { ascending: false });
 
         if (error) throw error;
