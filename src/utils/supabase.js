@@ -80,9 +80,17 @@ export const votingApi = {
   async checkUserVoted(topicId, userId) {
     const { data, error } = await supabase
       .from('voting_records')
-      .select('id, option_id, voted_at')
+      .select(`
+        id, 
+        option_id, 
+        voted_at,
+        residents!inner (
+          active
+        )
+      `)
       .eq('topic_id', topicId)
       .eq('user_id', userId)
+      .eq('residents.active', 1)
       .single();
 
     if (error && error.code !== 'PGRST116') {
@@ -145,8 +153,14 @@ export const votingApi = {
   async getVotingStatistics(topicId) {
     const { data: totalVotes, error: totalError } = await supabase
       .from('voting_records')
-      .select('id', { count: 'exact' })
-      .eq('topic_id', topicId);
+      .select(`
+        id,
+        residents!inner (
+          active
+        )
+      `, { count: 'exact' })
+      .eq('topic_id', topicId)
+      .eq('residents.active', 1);
 
     if (totalError) {
       console.error('Error fetching total votes:', totalError);
@@ -155,8 +169,14 @@ export const votingApi = {
 
     const { data: floorDistribution, error: floorError } = await supabase
       .from('voting_records')
-      .select('floor_number')
-      .eq('topic_id', topicId);
+      .select(`
+        floor_number,
+        residents!inner (
+          active
+        )
+      `)
+      .eq('topic_id', topicId)
+      .eq('residents.active', 1);
 
     if (floorError) {
       console.error('Error fetching floor distribution:', floorError);
