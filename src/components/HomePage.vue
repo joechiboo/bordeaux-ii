@@ -54,7 +54,7 @@
 
 	.content-wrapper {
 		position: relative;
-		min-height: 100vh;
+		min-height: calc(100vh - 60px);
 		padding: 0;
 		z-index: 1;
 		box-sizing: border-box;

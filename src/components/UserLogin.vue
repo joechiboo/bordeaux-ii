@@ -209,8 +209,8 @@
 <style scoped>
 	.login {
 		max-width: 450px;
-		margin: 80px auto;
-		padding: 40px;
+		margin: 20px auto;
+		padding: 25px;
 		border: 1px solid #ddd;
 		border-radius: 15px;
 		background: #ffffff;
@@ -218,14 +218,14 @@
 	}
 
 	.form-group {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 
 	.verification-section {
 		border: 2px solid #e8f4f8;
 		border-radius: 10px;
-		padding: 20px;
-		margin-bottom: 25px;
+		padding: 15px;
+		margin-bottom: 20px;
 		background-color: #f8fcff;
 	}
 
@@ -240,7 +240,7 @@
 	}
 
 	.verification-section .form-group {
-		margin-bottom: 15px;
+		margin-bottom: 12px;
 	}
 
 	.verification-section .form-group:last-child {
