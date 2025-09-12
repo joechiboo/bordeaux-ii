@@ -299,9 +299,12 @@ export default {
 
 <style scoped>
 .voting-list-container {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .page-header {
@@ -398,8 +401,9 @@ export default {
 
 .voting-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 100%;
 }
 
 .voting-card {

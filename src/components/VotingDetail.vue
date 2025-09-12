@@ -445,9 +445,12 @@ export default {
 
 <style scoped>
 .voting-detail-container {
-  max-width: 900px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .loading-state, .error-state {
