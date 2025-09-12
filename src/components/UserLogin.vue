@@ -185,7 +185,7 @@
 					};
 
 					// 使用 upsert 來確保資料是最新的
-					const { data, error } = await supabase
+					const { error } = await supabase
 						.from('residents')
 						.upsert(residentData, { 
 							onConflict: 'user_id',
