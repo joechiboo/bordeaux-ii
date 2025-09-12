@@ -41,20 +41,24 @@
 
 <style scoped>
 	.background-image {
-		height: 94vh; /* 视窗的100%高度 */
-		width: 100vw; /* 视窗的100%宽度 */
-		position: relative;
-		opacity: 0.1;
-	}
-
-	.content-wrapper {
-		position: absolute;
+		height: 100vh;
+		width: 100%;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: 20px; /* 可以根据需要添加内边距 */
+		opacity: 0.1;
+		z-index: -1;
+	}
+
+	.content-wrapper {
+		position: relative;
+		min-height: 100vh;
+		padding: 0;
 		z-index: 1;
+		box-sizing: border-box;
+		overflow-x: hidden;
 	}
 
 	.navbar {

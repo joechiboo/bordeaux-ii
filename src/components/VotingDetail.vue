@@ -448,9 +448,10 @@ export default {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   overflow-x: hidden;
+  min-height: calc(100vh - 60px);
 }
 
 .loading-state, .error-state {

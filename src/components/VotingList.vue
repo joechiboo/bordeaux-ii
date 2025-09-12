@@ -302,14 +302,15 @@ export default {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   overflow-x: hidden;
+  min-height: calc(100vh - 60px);
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -327,8 +328,8 @@ export default {
 .voting-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .stat-card {
@@ -358,8 +359,8 @@ export default {
 
 .voting-tabs {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 0;
 }
