@@ -54,13 +54,21 @@ const routes = [
 		path: '/voting',
 		name: 'VotingList',
 		component: () => import('../components/VotingList.vue'), // 投票列表
-		meta: { title: '電子投票', requiresAuth: true },
+		meta: { 
+			title: '電子投票',
+			requiresAuth: true,
+			disabled: true // 暫時禁用
+		},
 	},
 	{
 		path: '/voting/:id',
 		name: 'VotingDetail',
 		component: () => import('../components/VotingDetail.vue'), // 投票詳情
-		meta: { title: '投票詳情', requiresAuth: true },
+		meta: { 
+			title: '投票詳情',
+			requiresAuth: true,
+			disabled: true // 暫時禁用
+		},
 	},
 ];
 
@@ -79,6 +87,14 @@ router.beforeEach((to, from, next) => {
 	if (to.meta.title) {
 		document.title = '波爾多樂菲莊園 - 模範社區' + ' | ' + to.meta.title;
 	}
+	
+	// 檢查路由是否被禁用
+	if (to.meta.disabled) {
+		alert('電子投票功能尚未開放，敬請期待！');
+		next({ name: 'Home' }); // 重定向到首頁
+		return;
+	}
+	
 	if (to.meta.requiresAuth && !store.state.isAuthenticated) {
 		console.log('🚫 需要登入，重定向到登入頁面');
 		const redirectParams = { 

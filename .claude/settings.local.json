@@ -20,7 +20,9 @@
       "Bash(git remote set-url:*)",
       "Bash(ssh:*)",
       "Bash(npm run lint)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)"
     ],
     "deny": []
   }

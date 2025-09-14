@@ -31,7 +31,7 @@
 						<router-link class="nav-link" to="/facilities" @click="collapseNavbar" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/voting" @click="collapseNavbar">🗳 電子投票</router-link>
+						<router-link class="nav-link" to="/voting" @click="collapseNavbar" :class="{ disabled: isVotingDisabled }">🗳 電子投票</router-link>
 					</li>
 				</ul>
 			</div>
@@ -47,6 +47,7 @@
 			return {
 				subtitle: '',
 				isFacilitiesDisabled: false, // 根据实际情况设置
+				isVotingDisabled: true, // 暫時禁用電子投票功能
 			};
 		},
 		created() {
@@ -126,6 +127,17 @@
 		margin-right: 6px;
 		font-size: 8px;
 		vertical-align: middle;
+	}
+
+	/* disabled 樣式 */
+	.nav-link.disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	.nav-link.disabled:hover {
+		background-color: transparent !important;
 	}
 
 	@media (max-width: 768px) {
