@@ -34,6 +34,11 @@
 						<router-link class="nav-link" to="/voting" @click="collapseNavbar" :class="{ disabled: isVotingDisabled }">🗳 電子投票</router-link>
 					</li>
 				</ul>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<span class="navbar-text text-muted small">v0.1.1</span>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</nav>
