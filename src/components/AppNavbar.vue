@@ -36,7 +36,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<span class="navbar-text text-light small opacity-75" @click="collapseNavbar">09.15.11.35</span>
+						<span class="navbar-text text-light small opacity-75" @click="collapseNavbar">25.09.15.11.36</span>
 					</li>
 				</ul>
 			</div>
@@ -65,10 +65,10 @@
 		methods: {
 			collapseNavbar() {
 				const navbarCollapse = document.getElementById('navbarNav');
-				const bsCollapse = new Collapse(navbarCollapse, {
-					toggle: false,
-				});
-				bsCollapse.hide();
+				if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+					const bsCollapse = Collapse.getOrCreateInstance(navbarCollapse);
+					bsCollapse.hide();
+				}
 			},
 			setSubtitle(path) {
 				switch (path) {

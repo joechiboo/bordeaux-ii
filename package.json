@@ -3,7 +3,7 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "version": "09.15.11.35",
+  "version": "25.09.15.11.36",
   "private": true,
   "scripts": {
     "dev": "vite",
