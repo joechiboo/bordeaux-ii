@@ -1,12 +1,10 @@
 <template>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<router-link class="navbar-brand" to="/welcome" @click="collapseNavbar">波爾多 - 樂菲莊園</router-link>
+			<router-link class="navbar-brand" to="/welcome">波爾多 - 樂菲莊園</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"
-				data-bs-toggle="collapse"
-				data-bs-target="#navbarNav"
 				aria-controls="navbarNav"
 				aria-expanded="false"
 				aria-label="Toggle navigation"
@@ -16,27 +14,27 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<router-link class="nav-link" to="/members" @click="collapseNavbar">委員名單</router-link>
+						<router-link class="nav-link" to="/members">委員名單</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/rules" @click="collapseNavbar">社區規章</router-link>
+						<router-link class="nav-link" to="/rules">社區規章</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/events" @click="collapseNavbar">大事記</router-link>
+						<router-link class="nav-link" to="/events">大事記</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/records" @click="collapseNavbar">會議記錄</router-link>
+						<router-link class="nav-link" to="/records">會議記錄</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/facilities" @click="collapseNavbar" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
+						<router-link class="nav-link" to="/facilities" :class="{ disabled: isFacilitiesDisabled }">公共設施</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link" to="/voting" @click="collapseNavbar" :class="{ disabled: isVotingDisabled }">🗳 電子投票</router-link>
+						<router-link class="nav-link" to="/voting" :class="{ disabled: isVotingDisabled }">🗳 電子投票</router-link>
 					</li>
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<span class="navbar-text text-light small opacity-75" @click="collapseNavbar">25.09.15.11.36</span>
+						<span class="navbar-text text-light small opacity-75">25.09.15.11.41</span>
 					</li>
 				</ul>
 			</div>
@@ -62,14 +60,26 @@
 				next();
 			});
 		},
-		methods: {
-			collapseNavbar() {
+		mounted() {
+			// 手動初始化 Bootstrap Collapse
+			setTimeout(() => {
 				const navbarCollapse = document.getElementById('navbarNav');
-				if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-					const bsCollapse = Collapse.getOrCreateInstance(navbarCollapse);
-					bsCollapse.hide();
+				const toggleButton = document.querySelector('.navbar-toggler');
+
+				if (navbarCollapse && toggleButton) {
+					// 初始化 Collapse 實例
+					const collapseInstance = new Collapse(navbarCollapse, {
+						toggle: false
+					});
+
+					// 綁定按鈕點擊事件
+					toggleButton.addEventListener('click', () => {
+						collapseInstance.toggle();
+					});
 				}
-			},
+			}, 100);
+		},
+		methods: {
 			setSubtitle(path) {
 				switch (path) {
 					case '/welcome':
