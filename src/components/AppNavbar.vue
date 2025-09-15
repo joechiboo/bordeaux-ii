@@ -36,7 +36,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<span class="navbar-text text-light small opacity-75">v0.1.1</span>
+						<span class="navbar-text text-light small opacity-75" @click="collapseNavbar">2025.09.15.1</span>
 					</li>
 				</ul>
 			</div>
