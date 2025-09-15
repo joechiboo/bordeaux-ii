@@ -22,7 +22,9 @@
       "Bash(npm run lint)",
       "Bash(git reset:*)",
       "Bash(git fetch:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git rebase:*)",
+      "WebFetch(domain:joechiboo.github.io)"
     ],
     "deny": []
   }
