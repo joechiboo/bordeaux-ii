@@ -4,15 +4,23 @@ export const attendanceUtils = {
 			return 0;
 		}
 		// 支援字串和陣列兩種格式
-		let attended;
+		let attended, effectiveMeetings;
 		if (typeof attendance === 'string') {
-			attended = (attendance.match(/1/g) || []).length;
+			// 計算實際參與的會議數（排除 '-' 表示尚未加入的會議）
+			const validAttendance = attendance.replace(/-/g, '');
+			attended = (validAttendance.match(/1/g) || []).length;
+			effectiveMeetings = validAttendance.length;
 		} else if (Array.isArray(attendance)) {
 			attended = attendance.filter(a => a === true || a === 1).length;
+			effectiveMeetings = attendance.length;
 		} else {
 			return 0;
 		}
-		return Math.round((attended / totalMeetings) * 100);
+		// 如果沒有有效的會議記錄，返回0
+		if (effectiveMeetings === 0) {
+			return 0;
+		}
+		return Math.round((attended / effectiveMeetings) * 100);
 	},
 
 	getAttendanceStats(attendance) {
@@ -22,8 +30,10 @@ export const attendanceUtils = {
 		// 支援字串和陣列兩種格式
 		let attended, total;
 		if (typeof attendance === 'string') {
-			attended = (attendance.match(/1/g) || []).length;
-			total = attendance.length;
+			// 計算實際參與的會議數（排除 '-' 表示尚未加入的會議）
+			const validAttendance = attendance.replace(/-/g, '');
+			attended = (validAttendance.match(/1/g) || []).length;
+			total = validAttendance.length;
 		} else if (Array.isArray(attendance)) {
 			attended = attendance.filter(a => a === true || a === 1).length;
 			total = attendance.length;
