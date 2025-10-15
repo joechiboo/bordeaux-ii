@@ -51,7 +51,7 @@ export const committeeData = [
 					{ key: 'D 棟(D3-09F)', attendance: '111111111101110000', value: '楊O華' },
 					{ key: 'D 棟(D5-05F)', attendance: '111111011111111011', value: '褚O聲' },
 					{ key: 'E 棟(E6-12F)', attendance: '111110100100010011', value: '游O順(辭)' },
-					{ key: 'E 棟(E7-15F)', attendance: '------------------', value: '周佑霖' },
+					{ key: 'E 棟(E7-15F)', attendance: '-----------------0', value: '周佑霖' },
 					{ key: 'E 棟(E6-09F)', attendance: '111111111111111111', value: '楊O峰' },
 					{ key: 'F 棟(F6-04F)', attendance: '111111111111111100', value: '林O君' },
 					{ key: 'F 棟(F5-04F)', attendance: '111111000100010011', value: '陳O宏(辭)' },
