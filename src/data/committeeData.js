@@ -9,7 +9,7 @@
 export const committeeData = [
 	{
 		version: '第二屆管理委員會',
-		totalMeetings: 16,
+		totalMeetings: 17,
 		// 會議列表 - 對應attendance陣列索引
 		meetingList: [
 			'第1次例行會議',
@@ -27,7 +27,9 @@ export const committeeData = [
 			'8/6例會',
 			'8/7例會',
 			'8/14例會',
-			'8/19',
+			//'8/19',
+			'10/2例會',
+			'10/23臨時會議',
 		],
 		contents: [
 			{
@@ -43,18 +45,18 @@ export const committeeData = [
 				title: '當選委員名單',
 				details: [
 					{ key: 'A 棟(A3-15F)', attendance: '101111111111111111', value: '簡O燕' },
-					{ key: 'A 棟(A5-12F)', attendance: '111111111111111111', value: '許O書' },
-					{ key: 'B 棟(B1-04F)', attendance: '111111111111111111', value: '郭O銘' },
-					{ key: 'B 棟(B3-09F)', attendance: '011111000011100011', value: '宋O翊' },
+					{ key: 'A 棟(A5-12F)', attendance: '111111111111111100', value: '許O書' },
+					{ key: 'B 棟(B1-04F)', attendance: '111111111111111100', value: '郭O銘' },
+					{ key: 'B 棟(B3-09F)', attendance: '011111000011100111', value: '宋O翊' },
 					{ key: 'C 棟(C2-08F)', attendance: '110111111111110111', value: '張O榮' },
-					{ key: 'C 棟(C5-05F)', attendance: '111111111111111111', value: '鄧O芳' },
-					{ key: 'D 棟(D3-09F)', attendance: '111111111101110000', value: '楊O華' },
+					{ key: 'C 棟(C5-05F)', attendance: '111111111111111100', value: '鄧O芳' },
+					{ key: 'D 棟(D3-09F)', attendance: '111111111101110011', value: '楊O華' },
 					{ key: 'D 棟(D5-05F)', attendance: '111111011111111011', value: '褚O聲' },
-					{ key: 'E 棟(E6-12F)', attendance: '111110100100010011', value: '游O順(辭)' },
-					{ key: 'E 棟(E7-15F)', attendance: '-----------------0', value: '周佑霖' },
-					{ key: 'E 棟(E6-09F)', attendance: '111111111111111111', value: '楊O峰' },
-					{ key: 'F 棟(F6-04F)', attendance: '111111111111111100', value: '林O君' },
-					{ key: 'F 棟(F5-04F)', attendance: '111111000100010011', value: '陳O宏(辭)' },
+					{ key: 'E 棟(E6-12F)', attendance: '11111010010001001-', value: '游O順(辭)' },
+					{ key: 'E 棟(E7-15F)', attendance: '----------------11', value: '周佑霖' },
+					{ key: 'E 棟(E6-09F)', attendance: '111111111111111100', value: '楊O峰' },
+					{ key: 'F 棟(F6-04F)', attendance: '111111111111111111', value: '林O君' },
+					{ key: 'F 棟(F5-04F)', attendance: '11111100010001001-', value: '陳O宏(辭)' },
 					{ key: 'G 棟(G6-04F)', attendance: '101100100000110111', value: '李O傑' },
 					{ key: 'G 棟(G2-07F)', attendance: '111111111111111111', value: '李O鳳' },
 					{ key: 'H 棟(H5-07F)', attendance: '111111111111111011', value: '呂O真' },
