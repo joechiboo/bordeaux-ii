@@ -34,7 +34,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<span class="navbar-text text-light small opacity-75">25.09.15.11.41</span>
+						<span class="navbar-text text-light small opacity-75">25.12.19.08.33</span>
 					</li>
 				</ul>
 			</div>
