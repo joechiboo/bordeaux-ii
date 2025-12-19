@@ -53,36 +53,13 @@
 
 ---
 
-## 📋 手動部署 (備用方案)
+## ⚠️ 待辦事項
 
-如果 GitHub Actions 失效，可使用手動方式：
-
-### 1. 在 main 分支 build
-
-```bash
-git checkout main
-npm install    # 第一次才需要
-npm run build  # 產生 dist/
-```
-
-### 2. 複製 dist 到 gh-pages
-
-因為 gh-pages 分支已經被 checkout 到 gh-pages-build 資料夾：
-
-```bash
-cp -r dist/* gh-pages-build/
-```
-
-### 3. Commit & Push
-
-進入 gh-pages-build 目錄，提交更新：
-
-```bash
-cd gh-pages-build
-git add .
-git commit -m "Deploy updated site"
-git push origin gh-pages
-```
+> **下次發版前請處理**：移除 `gh-pages-build` worktree，避免與 GitHub Actions 衝突
+>
+> ```bash
+> git worktree remove gh-pages-build
+> ```
 
 ---
 
