@@ -34,7 +34,7 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<span class="navbar-text text-light small opacity-75">25.12.19.08.33</span>
+						<span class="navbar-text text-light small opacity-75">{{ version }}</span>
 					</li>
 				</ul>
 			</div>
@@ -44,10 +44,12 @@
 
 <script>
 	import { Collapse } from 'bootstrap';
+	import { version } from '../../package.json';
 	export default {
 		name: 'AppNavbar',
 		data() {
 			return {
+				version,
 				subtitle: '',
 				isFacilitiesDisabled: false, // 根据实际情况设置
 				isVotingDisabled: true, // 暫時禁用電子投票功能
