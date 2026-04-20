@@ -14,34 +14,19 @@
 ## 部署流程 (重要！)
 
 ### 當前部署方式
-項目使用 **gh-pages 分支部署**，而不是 GitHub Actions。
+由 **GitHub Actions 自動部署**（`.github/workflows/deploy.yml`）。任何 push 到 `main` 的 commit 會自動觸發 build 並以 `force_orphan` 方式 push 到 `gh-pages` 分支。**不要手動 build 或手動 push gh-pages**，會被下一次 Actions 覆蓋。
 
-### 完整部署步驟：
-1. **開發階段**: 在 `main` 分支進行代碼修改
-2. **推送源代碼**: 
-   ```bash
-   git add .
-   git commit -m "your commit message"
-   git push origin main
-   ```
-3. **構建項目**:
-   ```bash
-   npm run build
-   ```
-4. **部署到 gh-pages**:
-   ```bash
-   cp -r dist/* gh-pages-build/
-   cd gh-pages-build
-   git add .
-   git commit -m "Deploy updated site"
-   git push origin gh-pages
-   ```
+### 標準流程
+1. 在 `main`（或 feature branch）修改程式碼
+2. Commit 並 push；若走 feature branch，用 `gh pr create` 開 PR merge 回 main
+3. Merge 後等 Actions 完成（約 1~2 分鐘），網站即更新
 
-### 注意事項
-- 源代碼推送到 `main` 分支，網站內容部署到 `gh-pages` 分支
-- `gh-pages-build/` 目錄是 `gh-pages` 分支的 git worktree
-- 每次更新都需要重新構建並推送到 gh-pages 分支
-- 網站地址: https://joechiboo.github.io/bordeaux-ii/
+### 本地 `gh-pages-build/` worktree
+- 仍是 `gh-pages` 分支的 worktree，保留供檢視產物用
+- 由於 Actions 使用 `force_orphan: true`，每次部署會孤兒化 gh-pages，本地 worktree 必要時用 `git fetch origin gh-pages && git -C gh-pages-build reset --hard origin/gh-pages` 同步
+
+### 網站地址
+https://joechiboo.github.io/bordeaux-ii/
 
 ## 開發環境設置
 
