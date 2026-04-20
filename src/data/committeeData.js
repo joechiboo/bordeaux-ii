@@ -8,6 +8,42 @@
 
 export const committeeData = [
 	{
+		version: '第三屆管理委員會',
+		totalMeetings: 0,
+		meetingList: [],
+		contents: [
+			{
+				title: '當選委員名單',
+				details: [
+					{ key: 'A 棟(A3-15F)', value: '王O新' },
+					{ key: 'A 棟(A5-12F)', value: '龔O祥' },
+					{ key: 'B 棟(B1-05F)', value: '宋O翊' },
+					{ key: 'B 棟(B3-09F)', value: '黃O欽' },
+					{ key: 'C 棟(C2-08F)', value: '張O榮' },
+					{ key: 'C 棟(C3-06F)', value: '袁O燕' },
+					{ key: 'D 棟(D3-13F)', value: '張O晶' },
+					{ key: 'D 棟(D5-10F)', value: '陳O惠' },
+					{ key: 'E 棟(E6-09F)', value: '王O蓁' },
+					{ key: 'E 棟(E7-15F)', value: '周O霖' },
+					{ key: 'F 棟(F5-11F)', value: '龍O怡' },
+					{ key: 'F 棟(F6-04F)', value: '林O君' },
+					{ key: 'G 棟(G5-10F)', value: '潘O雄' },
+					{ key: 'G 棟(G6-04F)', value: '李O民' },
+					{ key: 'H 棟(H3-07F)', value: '陳O珊' },
+					{ key: 'H 棟(H6-05F)', value: '張O俊' },
+					{ key: '店面(S1-01F)', value: '彭O思' },
+				],
+			},
+			{
+				title: '備註',
+				details: [
+					{ key: '選舉日期', value: '115-3-21 區權會重開會議' },
+					{ key: '遞補說明', value: '原當選戶號 D3-9F、F3-12F、H5-7F 已簽署資格放棄聲明書，依規約由該棟候補委員依序遞補' },
+				],
+			},
+		],
+	},
+	{
 		version: '第二屆管理委員會',
 		totalMeetings: 24,
 		// 會議列表 - 對應attendance陣列索引
