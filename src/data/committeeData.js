@@ -81,7 +81,7 @@ export const committeeData = [
 					{ key: '主委', value: '張O榮' },
 					{ key: '副委', value: '陳O宏(辭)、高O宇' },
 					{ key: '財委', value: '游O順(辭)、吳O華' },
-					{ key: '監委', value: '褚O聲' },
+					{ key: '監委', value: '褚O聲(辭)、宋O翊' },
 				],
 			},
 			{
