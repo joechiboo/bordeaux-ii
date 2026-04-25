@@ -13,6 +13,18 @@ export const committeeData = [
 		meetingList: [],
 		contents: [
 			{
+				title: '委員選舉結果',
+				details: [
+					{ key: '主委', value: '陳O惠' },
+					{ key: '副委', value: '陳O珊' },
+					{ key: '財委', value: '張O晶' },
+					{ key: '監委', value: '潘O雄' },
+					{ key: '機電(一)', value: '龔O祥' },
+					{ key: '機電(二)', value: '張O榮' },
+					{ key: '文康(一)', value: '林O君' },
+				],
+			},
+			{
 				title: '當選委員名單',
 				details: [
 					{ key: 'A 棟(A3-15F)', value: '王O新' },
