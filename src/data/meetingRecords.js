@@ -1,5 +1,63 @@
 export const meetingRecords = [
 	{
+		title: '樂非莊園第三屆管委會職務委員選舉會議記錄',
+		location: '家教室',
+		datetime: '2026年4月17日 19:30-20:10',
+		convener: '第二屆主任委員 張紀榮（召集人）',
+		reports: [],
+		issues: [
+			'職務委員選舉結果：一、主任委員：陳淑惠獲推薦，9票同意當選。接下來由陳淑惠主任委員擔任會議主席。二、副主任委員：陳曉珊獲推薦，9票同意當選。三、監察委員：潘國雄獲推薦，9票同意當選。四、財務委員：張晶晶獲推薦，10票同意當選。五、機電設備委員(一)：龔家祥獲推薦，10票同意當選。六、機電設備委員(二)：張紀榮自薦，10票同意當選。七、文康聯誼委員(一)：林俞君自薦，獲陳主委委任。其他未選出的職務委員會後由委員互選或主任委員委任。',
+			'臨時動議1：115年5月至116年4月的管理費繳費單依往例由管理中心在115年4月底前一次匯出到住戶社區幫APP中。',
+			'臨時動議2：第二屆與第三屆管委會交接日期訂在4月30日晚間11點。管理中心須將相關文件備妥準備交接。',
+		],
+		nextMeeting: {
+			date: '2026年4月30日 23:00',
+			specialNote: '第二屆與第三屆管委會交接',
+		},
+		attendance: {
+			present: [
+				{ name: '宋廣翊', position: 'B1-05F', attendanceType: '實體出席' },
+				{ name: '黃適欽', position: 'B3-09F', attendanceType: '實體出席' },
+				{ name: '張紀榮', position: 'C2-08F', attendanceType: '實體出席' },
+				{ name: '袁玉燕', position: 'C3-06F', attendanceType: '實體出席' },
+				{ name: '張晶晶', position: 'D3-13F', attendanceType: '實體出席' },
+				{ name: '陳淑惠', position: 'D5-10F', attendanceType: '實體出席' },
+				{ name: '王珮蓁', position: 'E6-09F', attendanceType: '實體出席' },
+				{ name: '周佑霖', position: 'E7-15F', attendanceType: '實體出席' },
+				{ name: '林俞君', position: 'F6-04F', attendanceType: '實體出席' },
+				{ name: '潘國雄', position: 'G5-10F', attendanceType: '實體出席' },
+				{ name: '李張民', position: 'G6-04F', attendanceType: '實體出席' },
+				{ name: '陳曉珊', position: 'H3-07F', attendanceType: '實體出席' },
+				{ name: '張才俊', position: 'H6-05F', attendanceType: '實體出席' },
+			],
+			video: [],
+			leave: [
+				{ name: '王源新', position: 'A3-15F', reason: '請假' },
+				{ name: '龔家祥', position: 'A5-12F', reason: '請假' },
+				{ name: '彭穎思', position: 'S1-1F', reason: '請假' },
+				{ name: '龍君怡', position: 'F5-11F', reason: '請假' },
+			],
+			absent: [],
+			attendees: {
+				total: 17,
+				present: 13,
+				physicalPresent: 13,
+				videoPresent: 0,
+				leave: 4,
+				absent: 0,
+				attendanceRate: '76.47%',
+			},
+		},
+		specialNotes: {
+			guestResidents: [],
+			vendors: [],
+			meetingQuorum:
+				'在19時35分時參與委員人數13人，已過半達成會門檻，召集人宣佈開會',
+		},
+		meetingEndTime: '20:10',
+		totalDuration: '40分鐘',
+	},
+	{
 		title: '樂非莊園第二屆管委會115年四月第一次臨時會會議記錄',
 		location: '家教室',
 		datetime: '2026年4月17日 20:30-21:47',
