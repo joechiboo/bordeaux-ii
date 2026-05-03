@@ -73,7 +73,7 @@ export default {
 
 			this.loading = true
 			try {
-				const basePath = import.meta.env.BASE_URL || '/'
+				const basePath = process.env.BASE_URL || '/'
 				const response = await fetch(`${basePath}reference/公寓大廈管理條例.md`)
 				if (response.ok) {
 					this.lawContent = await response.text()
