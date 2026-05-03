@@ -22,8 +22,8 @@ const routes = [
 	},
 	{
 		path: '/rules',
-		name: 'CommunityRules',
-		component: () => import('../components/CommunityRules.vue'), // 社區規章組件
+		name: 'RulesAndLaws',
+		component: () => import('../components/RulesAndLaws.vue'), // 社區規章與法規
 		meta: { title: '社區規章' },
 	},
 	{
