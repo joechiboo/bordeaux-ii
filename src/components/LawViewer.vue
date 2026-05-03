@@ -93,7 +93,7 @@ export default {
 					return this.parsedContent.some(
 						s => s.chapterId === section.id &&
 						(s.title.toLowerCase().includes(query) ||
-						 s.content?.toLowerCase().includes(query))
+						s.content?.toLowerCase().includes(query))
 					)
 				}
 				return (
