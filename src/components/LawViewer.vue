@@ -219,6 +219,7 @@ export default {
 <style scoped>
 .law-viewer {
 	padding: 1rem;
+	text-align: left;
 }
 
 .search-box {

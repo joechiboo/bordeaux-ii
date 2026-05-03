@@ -99,6 +99,7 @@ export default {
 <style scoped>
 .rules-laws-container {
 	padding: 1rem;
+	text-align: left;
 }
 
 .nav-tabs {
