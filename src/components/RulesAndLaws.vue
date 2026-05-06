@@ -24,6 +24,17 @@
 					<i class="bi bi-book me-2"></i>公寓大廈管理條例
 				</button>
 			</li>
+			<li class="nav-item" role="presentation">
+				<button
+					class="nav-link"
+					:class="{ active: activeTab === 'finance' }"
+					@click="activeTab = 'finance'"
+					type="button"
+					role="tab"
+				>
+					<i class="bi bi-cash-coin me-2"></i>財務管理辦法
+				</button>
+			</li>
 		</ul>
 
 		<!-- Tab 內容 -->
@@ -46,6 +57,20 @@
 					尚未載入法規內容，請稍後再試。
 				</div>
 			</div>
+
+			<!-- 財務管理辦法 -->
+			<div v-show="activeTab === 'finance'" class="tab-pane fade" :class="{ 'show active': activeTab === 'finance' }">
+				<div v-if="financeLoading" class="text-center py-5">
+					<div class="spinner-border text-primary" role="status">
+						<span class="visually-hidden">載入中...</span>
+					</div>
+					<p class="mt-2 text-muted">載入財務管理辦法中...</p>
+				</div>
+				<LawViewer v-else-if="financeContent" :markdownContent="financeContent" />
+				<div v-else class="alert alert-warning">
+					尚未載入財務管理辦法，請稍後再試。
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -64,7 +89,9 @@ export default {
 		return {
 			activeTab: 'community',
 			lawContent: '',
-			loading: false
+			loading: false,
+			financeContent: '',
+			financeLoading: false
 		}
 	},
 	methods: {
@@ -84,12 +111,31 @@ export default {
 				console.error('載入法規失敗:', error)
 			}
 			this.loading = false
+		},
+		async loadFinanceContent() {
+			if (this.financeContent) return
+
+			this.financeLoading = true
+			try {
+				const basePath = process.env.BASE_URL || '/'
+				const response = await fetch(`${basePath}reference/樂菲莊園社區財務管理辦法.md`)
+				if (response.ok) {
+					this.financeContent = await response.text()
+				} else {
+					console.error('無法載入財務管理辦法')
+				}
+			} catch (error) {
+				console.error('載入財務管理辦法失敗:', error)
+			}
+			this.financeLoading = false
 		}
 	},
 	watch: {
 		activeTab(newTab) {
 			if (newTab === 'law') {
 				this.loadLawContent()
+			} else if (newTab === 'finance') {
+				this.loadFinanceContent()
 			}
 		}
 	}
