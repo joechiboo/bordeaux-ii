@@ -30,7 +30,7 @@ export const committeeData = [
 					{ key: 'C 棟(C2-08F) 主任委員', attendance: '1111', value: '張O榮' },
 					{ key: 'B 棟(B3-09F) 副主任委員', attendance: '1111', value: '黃O欽' },
 					{ key: 'B 棟(B1-05F) 監察委員', attendance: '1111', value: '宋O翊' },
-					{ key: '財務委員（戶號待確認）', attendance: '1111', value: '紀O喬' },
+					{ key: '財務委員（遞補）', attendance: '1111', value: '紀O喬' },
 					{ key: 'A 棟(A3-15F) 資訊委員', attendance: '1111', value: '王O新' },
 					{ key: 'A 棟(A5-12F) 機電委員', attendance: '1111', value: '龔O祥' },
 					{ key: 'F 棟(F5-11F) 環保委員', attendance: '0111', value: '龍O怡' },
