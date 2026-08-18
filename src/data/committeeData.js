@@ -25,6 +25,23 @@ export const committeeData = [
 				],
 			},
 			{
+				title: '115年5～8月例會出席率（視訊參與計為出席）',
+				details: [
+					{ key: 'C 棟(C2-08F) 主任委員', attendance: '1111', value: '張O榮' },
+					{ key: 'B 棟(B3-09F) 副主任委員', attendance: '1111', value: '黃O欽' },
+					{ key: 'B 棟(B1-05F) 監察委員', attendance: '1111', value: '宋O翊' },
+					{ key: '財務委員（戶號待確認）', attendance: '1111', value: '紀O喬' },
+					{ key: 'A 棟(A3-15F) 資訊委員', attendance: '1111', value: '王O新' },
+					{ key: 'A 棟(A5-12F) 機電委員', attendance: '1111', value: '龔O祥' },
+					{ key: 'F 棟(F5-11F) 環保委員', attendance: '0111', value: '龍O怡' },
+					{ key: 'C 棟(C3-06F)', attendance: '1111', value: '袁O燕' },
+					{ key: 'E 棟(E6-09F)', attendance: '1111', value: '王O蓁' },
+					{ key: 'E 棟(E7-15F)', attendance: '1101', value: '周O霖' },
+					{ key: '店面(S1-01F)', attendance: '1010', value: '彭O思' },
+					{ key: 'D 棟(D2-08F)', attendance: '-001', value: '劉O誼（115-6-1 補選）' },
+				],
+			},
+			{
 				title: '委員選舉結果（115-4-17 職務委員選舉，均已請辭或改選）',
 				details: [
 					{ key: '主委', value: '陳O惠 (辭)' },
