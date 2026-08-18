@@ -9,11 +9,23 @@
 export const committeeData = [
 	{
 		version: '第三屆管理委員會',
-		totalMeetings: 0,
-		meetingList: [],
+		totalMeetings: 4,
+		meetingList: ['5/20例會', '6/16例會', '7/7例會', '8/6例會'],
 		contents: [
 			{
-				title: '委員選舉結果',
+				title: '現任職務委員（依115年5～8月例會記錄）',
+				details: [
+					{ key: '主任委員', value: '張O榮' },
+					{ key: '副主任委員', value: '黃O欽' },
+					{ key: '監察委員', value: '宋O翊' },
+					{ key: '財務委員', value: '紀O喬' },
+					{ key: '資訊委員', value: '王O新' },
+					{ key: '機電委員', value: '龔O祥' },
+					{ key: '環保委員', value: '龍O怡' },
+				],
+			},
+			{
+				title: '委員選舉結果（115-4-17 職務委員選舉，均已請辭或改選）',
 				details: [
 					{ key: '主委', value: '陳O惠 (辭)' },
 					{ key: '副委', value: '陳O珊 (辭)' },
@@ -44,6 +56,7 @@ export const committeeData = [
 					{ key: 'H 棟(H3-07F)', value: '陳O珊 (辭)' },
 					{ key: 'H 棟(H6-05F)', value: '張O俊' },
 					{ key: '店面(S1-01F)', value: '彭O思' },
+					{ key: 'D 棟(D2-08F)', value: '劉O誼（115-6-1 補選）' },
 				],
 			},
 			{
