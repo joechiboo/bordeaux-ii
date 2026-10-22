@@ -9,11 +9,11 @@
 export const committeeData = [
 	{
 		version: '第三屆管理委員會',
-		totalMeetings: 4,
-		meetingList: ['5/20例會', '6/16例會', '7/7例會', '8/6例會'],
+		totalMeetings: 6,
+		meetingList: ['5/20例會', '6/16例會', '7/7例會', '8/6例會', '9/3例會', '10/8例會'],
 		contents: [
 			{
-				title: '現任職務委員（依115年5～8月例會記錄）',
+				title: '現任職務委員（依115年5～10月例會記錄）',
 				details: [
 					{ key: '主任委員', value: '張O榮' },
 					{ key: '副主任委員', value: '黃O欽' },
@@ -25,20 +25,21 @@ export const committeeData = [
 				],
 			},
 			{
-				title: '115年5～8月例會出席率（視訊參與計為出席）',
+				title: '115年5～10月例會出席率（視訊參與計為出席）',
 				details: [
-					{ key: 'C 棟(C2-08F) 主任委員', attendance: '1111', value: '張O榮' },
-					{ key: 'B 棟(B3-09F) 副主任委員', attendance: '1111', value: '黃O欽' },
-					{ key: 'B 棟(B1-05F) 監察委員', attendance: '1111', value: '宋O翊' },
-					{ key: '財務委員（遞補）', attendance: '1111', value: '紀O喬' },
-					{ key: 'A 棟(A3-15F) 資訊委員', attendance: '1111', value: '王O新' },
-					{ key: 'A 棟(A5-12F) 機電委員', attendance: '1111', value: '龔O祥' },
-					{ key: 'F 棟(F5-11F) 環保委員', attendance: '0111', value: '龍O怡' },
-					{ key: 'C 棟(C3-06F)', attendance: '1111', value: '袁O燕' },
-					{ key: 'E 棟(E6-09F)', attendance: '1111', value: '王O蓁' },
-					{ key: 'E 棟(E7-15F)', attendance: '1101', value: '周O霖' },
-					{ key: '店面(S1-01F)', attendance: '1010', value: '彭O思' },
-					{ key: 'D 棟(D2-08F)', attendance: '-001', value: '劉O誼（115-6-1 補選）' },
+					{ key: 'C 棟(C2-08F) 主任委員', attendance: '111111', value: '張O榮' },
+					{ key: 'B 棟(B3-09F) 副主任委員', attendance: '111110', value: '黃O欽' },
+					{ key: 'B 棟(B1-05F) 監察委員', attendance: '111111', value: '宋O翊' },
+					{ key: '財務委員（遞補）', attendance: '111111', value: '紀O喬' },
+					{ key: 'A 棟(A3-15F) 資訊委員', attendance: '111111', value: '王O新' },
+					{ key: 'A 棟(A5-12F) 機電委員', attendance: '111111', value: '龔O祥' },
+					{ key: 'F 棟(F5-11F) 環保委員', attendance: '011111', value: '龍O怡' },
+					{ key: 'C 棟(C3-06F)', attendance: '111111', value: '袁O燕' },
+					{ key: 'E 棟(E6-09F)', attendance: '1111--', value: '王O蓁 (辭)' },
+					{ key: 'E 棟(E7-15F)', attendance: '110101', value: '周O霖' },
+					{ key: '店面(S1-01F)', attendance: '101000', value: '彭O思' },
+					{ key: 'D 棟(D2-08F)', attendance: '-00111', value: '劉O誼（115-6-1 補選）' },
+					{ key: 'E 棟(E1-02F)', attendance: '-----0', value: '石O薇（115-9-24 補選）' },
 				],
 			},
 			{
@@ -64,7 +65,7 @@ export const committeeData = [
 					{ key: 'C 棟(C3-06F)', value: '袁O燕' },
 					{ key: 'D 棟(D3-13F)', value: '張O晶 (辭)' },
 					{ key: 'D 棟(D5-10F)', value: '陳O惠 (辭)' },
-					{ key: 'E 棟(E6-09F)', value: '王O蓁' },
+					{ key: 'E 棟(E6-09F)', value: '王O蓁 (辭)' },
 					{ key: 'E 棟(E7-15F)', value: '周O霖' },
 					{ key: 'F 棟(F5-11F)', value: '龍O怡' },
 					{ key: 'F 棟(F6-04F)', value: '林O君 (辭)' },
@@ -74,6 +75,7 @@ export const committeeData = [
 					{ key: 'H 棟(H6-05F)', value: '張O俊 (辭)' },
 					{ key: '店面(S1-01F)', value: '彭O思' },
 					{ key: 'D 棟(D2-08F)', value: '劉O誼（115-6-1 補選）' },
+					{ key: 'E 棟(E1-02F)', value: '石O薇（115-9-24 補選）' },
 				],
 			},
 			{
@@ -88,6 +90,7 @@ export const committeeData = [
 					{ key: 'D3-13F 張O晶', value: '請辭財務委員職務及管理委員資格' },
 					{ key: 'G5-10F 潘O雄', value: '請辭監察委員職務及管理委員資格' },
 					{ key: 'H6-05F 張O俊', value: '請辭管理委員資格' },
+					{ key: 'E6-09F 王O蓁', value: '115-8-31 因區權人已賣掉房屋，無法繼續擔任管理委員（樂菲（管）字第115090301號）' },
 				],
 			},
 			{
